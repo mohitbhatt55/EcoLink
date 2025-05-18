@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoLink</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>EcoLink</h1>
+        <form id="sanctuary-form">
+            <label for="sanctuary1">Sanctuary 1:</label>
+            <input type="text" id="sanctuary1" name="sanctuary1" placeholder="e.g., Jim Corbett (case-sensitive)">
+            <label for="sanctuary2">Sanctuary 2:</label>
+            <input type="text" id="sanctuary2" name="sanctuary2" placeholder="e.g., Rajaji (case-sensitive)">
+            <button type="button" id="getPathButton">Get Path</button>
+            <button type="button" id="visualizeButton">Visualize on Map</button>
+        </form>
+        <small>Note: Use exact sanctuary names as in the dataset. They are case-sensitive.</small>
+        <div id="path-output">
+            <h2>Calculated Path:</h2>
+            <textarea id="path-text" rows="6" cols="80" readonly
+                placeholder="The path will be displayed here."></textarea>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const getPathButton = document.getElementById('getPathButton');
+        const visualizeButton = document.getElementById('visualizeButton');
+        const sanctuary1Input = document.getElementById('sanctuary1');
+        const sanctuary2Input = document.getElementById('sanctuary2');
+        const pathTextarea = document.getElementById('path-text');
+
+        getPathButton.addEventListener('click', function () {
+            const sanctuary1 = sanctuary1Input.value.trim();
+            const sanctuary2 = sanctuary2Input.value.trim();
+
+            if (sanctuary1 && sanctuary2 && sanctuary1 !== sanctuary2) {
+                getPathButton.disabled = true;
+                getPathButton.textContent = 'Loading...';
+                fetch(`/get_corridor?source=${encodeURIComponent(sanctuary1)}&destination=${encodeURIComponent(sanctuary2)}`)
+                    .then(response => {
+                        if (!response.ok) {
+                            return response.json().then(err => {
+                                throw new Error(err.error || `HTTP error! Status: ${response.status}`);
+                            });
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        if (data && data.path) {
+                            const pathString = data.path.map(edge =>
+                                `${edge.source} -> ${edge.destination} (Distance: ${edge.distance} km, Risk: ${edge.risk})`
+                            ).join('\n');
+
+                            const summary = `\n\nTotal Distance: ${data.total_distance} km\nTotal Risk: ${data.total_risk}`;
+                            pathTextarea.value = pathString + summary;
+
+                            sessionStorage.setItem('corridorData', JSON.stringify(data));
+                        } else {
+                            pathTextarea.value = 'No path data received.';
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error fetching corridor data:", error);
+                        pathTextarea.value = error.message || 'Failed to retrieve path.';
+                    })
+                    .finally(() => {
+                        getPathButton.disabled = false;
+                        getPathButton.textContent = 'Get Path';
+                    });
+            } else {
+                alert('Please enter two different sanctuary names.');
+                pathTextarea.value = 'Invalid input: same or empty sanctuary names.';
+            }
+        });
+
+        visualizeButton.addEventListener('click', function () {
+            const sanctuary1 = sanctuary1Input.value.trim();
+            const sanctuary2 = sanctuary2Input.value.trim();
+
+            if (sanctuary1 && sanctuary2 && sanctuary1 !== sanctuary2) {
+                const storedData = sessionStorage.getItem('corridorData');
+                if (storedData) {
+                    window.location.href = `/map.html`; // ✅ Updated here
+                } else {
+                    visualizeButton.disabled = true;
+                    visualizeButton.textContent = 'Preparing...';
+                    fetch(`/get_corridor?source=${encodeURIComponent(sanctuary1)}&destination=${encodeURIComponent(sanctuary2)}`)
+                        .then(response => {
+                            if (!response.ok) {
+                                return response.json().then(err => {
+                                    throw new Error(err.error || `HTTP error! Status: ${response.status}`);
+                                });
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            sessionStorage.setItem('corridorData', JSON.stringify(data));
+                            window.location.href = `/map.html`; // ✅ Updated here
+                        })
+                        .catch(error => {
+                            console.error("Error fetching corridor data:", error);
+                            alert(error.message || 'Failed to retrieve path for visualization.');
+                        })
+                        .finally(() => {
+                            visualizeButton.disabled = false;
+                            visualizeButton.textContent = 'Visualize on Map';
+                        });
+                }
+            } else {
+                alert('Please enter two different sanctuary names to visualize.');
+            }
+        });
+    });
+</script>
+
+</body>
+
+</html>

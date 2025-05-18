@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wildlife Migration Corridor - Map</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        #mapid {
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body id="map-page">
+    <div class="container" id="map-container">
+        <h1>Wildlife Migration Corridor - Visualization</h1>
+        <div id="mapid"></div>
+        <button onclick="window.location.href='index.html'">Go Back to Input</button>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const map = L.map('mapid').setView([30.0668, 79.0193], 7);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+            }).addTo(map);
+
+            const data = sessionStorage.getItem('corridorData');
+
+            if (!data) {
+                alert("No path data available. Please generate a path first.");
+                window.location.href = 'index.html';
+                return;
+            }
+
+            const parsed = JSON.parse(data);
+
+          
+    // 1) Extract ordered node names from the path edges
+    const orderedNodes = [];
+    if (parsed.path.length) {
+      orderedNodes.push(parsed.path[0].source);
+      parsed.path.forEach(edge => {
+        orderedNodes.push(edge.destination);
+      });
+    }
+
+    // 2) Build coordinate array in path order, and drop invalid entries
+    const coords = [];
+    orderedNodes.forEach(name => {
+      const node = parsed.nodes[name];
+      if (node && node.latitude != null && node.longitude != null) {
+        coords.push([node.latitude, node.longitude]);
+        L.marker([node.latitude, node.longitude])
+          .addTo(map)
+          .bindPopup(name);
+      }
+    });
+
+    // 3) Draw one polyline through the ordered coordinates
+    if (coords.length > 1) {
+      const line = L.polyline(coords, { color: 'green', weight: 5 }).addTo(map);
+      map.fitBounds(line.getBounds());
+    }
+});
+</script>
+</body>
+
+</html>

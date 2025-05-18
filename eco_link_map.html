@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c8d04b9c147d28e26c7d7068f1399d29 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_c8d04b9c147d28e26c7d7068f1399d29" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c8d04b9c147d28e26c7d7068f1399d29 = L.map(
+                "map_c8d04b9c147d28e26c7d7068f1399d29",
+                {
+                    center: [23.904320724083604, 81.19054650297427],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_6f0bdb87509cec92e042b5f97e9bffa8 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_6f0bdb87509cec92e042b5f97e9bffa8.addTo(map_c8d04b9c147d28e26c7d7068f1399d29);
+        
+    
+            var marker_94a98718445483c2f3f7b753b4009f1e = L.marker(
+                [29.53, 78.774],
+                {
+}
+            ).addTo(map_c8d04b9c147d28e26c7d7068f1399d29);
+        
+    
+            var icon_fdc92fe038161854638b3704e475de2d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_034cf9f868693173b45efaace5ec4ba4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9999a741b8165ed362a9fb1bd7787023 = $(`<div id="html_9999a741b8165ed362a9fb1bd7787023" style="width: 100.0%; height: 100.0%;">Jim Corbett</div>`)[0];
+                popup_034cf9f868693173b45efaace5ec4ba4.setContent(html_9999a741b8165ed362a9fb1bd7787023);
+            
+        
+
+        marker_94a98718445483c2f3f7b753b4009f1e.bindPopup(popup_034cf9f868693173b45efaace5ec4ba4)
+        ;
+
+        
+    
+    
+                marker_94a98718445483c2f3f7b753b4009f1e.setIcon(icon_fdc92fe038161854638b3704e475de2d);
+            
+    
+            var marker_2b8bbf535b5d5e0d0aa08739226e142f = L.marker(
+                [27.103, 76.375],
+                {
+}
+            ).addTo(map_c8d04b9c147d28e26c7d7068f1399d29);
+        
+    
+            var icon_dfcdf5bf9d737c22ed2eae108be02798 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6cde6b1f018fd3ea6e248865c152f461 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c6415cc91336014e5b2a206d78befcc0 = $(`<div id="html_c6415cc91336014e5b2a206d78befcc0" style="width: 100.0%; height: 100.0%;">Sariska</div>`)[0];
+                popup_6cde6b1f018fd3ea6e248865c152f461.setContent(html_c6415cc91336014e5b2a206d78befcc0);
+            
+        
+
+        marker_2b8bbf535b5d5e0d0aa08739226e142f.bindPopup(popup_6cde6b1f018fd3ea6e248865c152f461)
+        ;
+
+        
+    
+    
+                marker_2b8bbf535b5d5e0d0aa08739226e142f.setIcon(icon_dfcdf5bf9d737c22ed2eae108be02798);
+            
+    
+            var marker_50cf64ac801cd02365e2f4f71a302abd = L.marker(
+                [26.017, 76.502],
+                {
+}
+            ).addTo(map_c8d04b9c147d28e26c7d7068f1399d29);
+        
+    
+            var icon_a4681566f925baa5ecbdcafc447a5dfe = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8e8998bc7d0bba60a9fec107b6da1df8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bfe62c3a9f47597d30ae29fa077c58d8 = $(`<div id="html_bfe62c3a9f47597d30ae29fa077c58d8" style="width: 100.0%; height: 100.0%;">Ranthambore</div>`)[0];
+                popup_8e8998bc7d0bba60a9fec107b6da1df8.setContent(html_bfe62c3a9f47597d30ae29fa077c58d8);
+            
+        
+
+        marker_50cf64ac801cd02365e2f4f71a302abd.bindPopup(popup_8e8998bc7d0bba60a9fec107b6da1df8)
+        ;
+
+        
+    
+    
+                marker_50cf64ac801cd02365e2f4f71a302abd.setIcon(icon_a4681566f925baa5ecbdcafc447a5dfe);
+            
+    
+            var marker_0ed07b12705af0add8af29f5bda38238 = L.marker(
+                [21.763, 79.307],
+                {
+}
+            ).addTo(map_c8d04b9c147d28e26c7d7068f1399d29);
+        
+    
+            var icon_0bd6d16757393b644d3d2eaab3362a60 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ef1b032d95bdfe84a56ccf10f955851e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e158e856d90923b88a8275ce0832216c = $(`<div id="html_e158e856d90923b88a8275ce0832216c" style="width: 100.0%; height: 100.0%;">Pench</div>`)[0];
+                popup_ef1b032d95bdfe84a56ccf10f955851e.setContent(html_e158e856d90923b88a8275ce0832216c);
+            
+        
+
+        marker_0ed07b12705af0add8af29f5bda38238.bindPopup(popup_ef1b032d95bdfe84a56ccf10f955851e)
+        ;
+
+        
+    
+    
+                marker_0ed07b12705af0add8af29f5bda38238.setIcon(icon_0bd6d16757393b644d3d2eaab3362a60);
+            
+    
+            var marker_d821483637da96144d5978f8f9d3ce9d = L.marker(
+                [22.334, 80.611],
+                {
+}
+            ).addTo(map_c8d04b9c147d28e26c7d7068f1399d29);
+        
+    
+            var icon_a97f9dca23186493833fcb7129fbdf23 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ed3ec4a1e543c343a19c807e1f7e15ba = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c40b416e3d3c5432ba2020a7f3cabe99 = $(`<div id="html_c40b416e3d3c5432ba2020a7f3cabe99" style="width: 100.0%; height: 100.0%;">Kanha</div>`)[0];
+                popup_ed3ec4a1e543c343a19c807e1f7e15ba.setContent(html_c40b416e3d3c5432ba2020a7f3cabe99);
+            
+        
+
+        marker_d821483637da96144d5978f8f9d3ce9d.bindPopup(popup_ed3ec4a1e543c343a19c807e1f7e15ba)
+        ;
+
+        
+    
+    
+                marker_d821483637da96144d5978f8f9d3ce9d.setIcon(icon_a97f9dca23186493833fcb7129fbdf23);
+            
+    
+            var marker_44f9e0f7a482459e4ad4ffa33720efa4 = L.marker(
+                [23.692, 81.051],
+                {
+}
+            ).addTo(map_c8d04b9c147d28e26c7d7068f1399d29);
+        
+    
+            var icon_f78919afe7c364be8b693921d3c6a96d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_edcde378da4a7c19d5285b979b9ec03b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_aefdcaaaec56eac3c5e4036404dfb4d3 = $(`<div id="html_aefdcaaaec56eac3c5e4036404dfb4d3" style="width: 100.0%; height: 100.0%;">Bandhavgarh</div>`)[0];
+                popup_edcde378da4a7c19d5285b979b9ec03b.setContent(html_aefdcaaaec56eac3c5e4036404dfb4d3);
+            
+        
+
+        marker_44f9e0f7a482459e4ad4ffa33720efa4.bindPopup(popup_edcde378da4a7c19d5285b979b9ec03b)
+        ;
+
+        
+    
+    
+                marker_44f9e0f7a482459e4ad4ffa33720efa4.setIcon(icon_f78919afe7c364be8b693921d3c6a96d);
+            
+    
+            var marker_64a5c2823a282312b3721bfa84db1134 = L.marker(
+                [21.949, 89.183],
+                {
+}
+            ).addTo(map_c8d04b9c147d28e26c7d7068f1399d29);
+        
+    
+            var icon_d0caac8ddd59c4552cab1808d62ed48b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5d7478ecfb9148db2978c0fbce0f9e62 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fdef50fab420e8184295e3938332e377 = $(`<div id="html_fdef50fab420e8184295e3938332e377" style="width: 100.0%; height: 100.0%;">Sundarbans</div>`)[0];
+                popup_5d7478ecfb9148db2978c0fbce0f9e62.setContent(html_fdef50fab420e8184295e3938332e377);
+            
+        
+
+        marker_64a5c2823a282312b3721bfa84db1134.bindPopup(popup_5d7478ecfb9148db2978c0fbce0f9e62)
+        ;
+
+        
+    
+    
+                marker_64a5c2823a282312b3721bfa84db1134.setIcon(icon_d0caac8ddd59c4552cab1808d62ed48b);
+            
+    
+            var marker_86f615cee3df0199720d5c8f32081fef = L.marker(
+                [26.733, 91.0],
+                {
+}
+            ).addTo(map_c8d04b9c147d28e26c7d7068f1399d29);
+        
+    
+            var icon_79168c4a9dbdee3861c3e366f03acbcc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b59918de520fffc0436201ad6cb9a431 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ad181c477bb8b0bb50152492401eae07 = $(`<div id="html_ad181c477bb8b0bb50152492401eae07" style="width: 100.0%; height: 100.0%;">Manas</div>`)[0];
+                popup_b59918de520fffc0436201ad6cb9a431.setContent(html_ad181c477bb8b0bb50152492401eae07);
+            
+        
+
+        marker_86f615cee3df0199720d5c8f32081fef.bindPopup(popup_b59918de520fffc0436201ad6cb9a431)
+        ;
+
+        
+    
+    
+                marker_86f615cee3df0199720d5c8f32081fef.setIcon(icon_79168c4a9dbdee3861c3e366f03acbcc);
+            
+    
+            var marker_371bb6e834064ef39eb0fce04ac7d497 = L.marker(
+                [26.576, 93.336],
+                {
+}
+            ).addTo(map_c8d04b9c147d28e26c7d7068f1399d29);
+        
+    
+            var icon_65c7fb2b90872e630e1a942fb21e3893 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a3fe88bd2292f78a7f5f89c90667a901 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ab073ca30b5a9059aa3d980b87265e04 = $(`<div id="html_ab073ca30b5a9059aa3d980b87265e04" style="width: 100.0%; height: 100.0%;">Kaziranga</div>`)[0];
+                popup_a3fe88bd2292f78a7f5f89c90667a901.setContent(html_ab073ca30b5a9059aa3d980b87265e04);
+            
+        
+
+        marker_371bb6e834064ef39eb0fce04ac7d497.bindPopup(popup_a3fe88bd2292f78a7f5f89c90667a901)
+        ;
+
+        
+    
+    
+                marker_371bb6e834064ef39eb0fce04ac7d497.setIcon(icon_65c7fb2b90872e630e1a942fb21e3893);
+            
+    
+            var poly_line_bd9aca44676525919349377997a207b1 = L.polyline(
+                [[29.53, 78.774], [27.103, 76.375]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_c8d04b9c147d28e26c7d7068f1399d29);
+        
+    
+            poly_line_bd9aca44676525919349377997a207b1.bindTooltip(
+                `<div>
+                     Jim Corbett ➔ Sariska
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_9cedfc07bd99ca23e9eb9743c06a8973 = L.polyline(
+                [[27.103, 76.375], [26.017, 76.502]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_c8d04b9c147d28e26c7d7068f1399d29);
+        
+    
+            poly_line_9cedfc07bd99ca23e9eb9743c06a8973.bindTooltip(
+                `<div>
+                     Sariska ➔ Ranthambore
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_ddf6ba52defc6ae1344fdec4d931c1bd = L.polyline(
+                [[26.017, 76.502], [21.763, 79.307]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_c8d04b9c147d28e26c7d7068f1399d29);
+        
+    
+            poly_line_ddf6ba52defc6ae1344fdec4d931c1bd.bindTooltip(
+                `<div>
+                     Ranthambore ➔ Pench
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_dc486b6917e11f87d98bae8157108424 = L.polyline(
+                [[21.763, 79.307], [22.334, 80.611]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_c8d04b9c147d28e26c7d7068f1399d29);
+        
+    
+            poly_line_dc486b6917e11f87d98bae8157108424.bindTooltip(
+                `<div>
+                     Pench ➔ Kanha
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_85002b7459038728c1daeba1ce5fc21f = L.polyline(
+                [[22.334, 80.611], [23.692, 81.051]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_c8d04b9c147d28e26c7d7068f1399d29);
+        
+    
+            poly_line_85002b7459038728c1daeba1ce5fc21f.bindTooltip(
+                `<div>
+                     Kanha ➔ Bandhavgarh
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_dc1e467b168fe65eb3d8aae7ab6731f2 = L.polyline(
+                [[23.692, 81.051], [21.949, 89.183]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_c8d04b9c147d28e26c7d7068f1399d29);
+        
+    
+            poly_line_dc1e467b168fe65eb3d8aae7ab6731f2.bindTooltip(
+                `<div>
+                     Bandhavgarh ➔ Sundarbans
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_f483c3eb7bb546f883e0643e412f2a7f = L.polyline(
+                [[21.949, 89.183], [26.733, 91.0]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_c8d04b9c147d28e26c7d7068f1399d29);
+        
+    
+            poly_line_f483c3eb7bb546f883e0643e412f2a7f.bindTooltip(
+                `<div>
+                     Sundarbans ➔ Manas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_f6bfc5c262bb032eef9a3699dc4e122b = L.polyline(
+                [[26.733, 91.0], [26.576, 93.336]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_c8d04b9c147d28e26c7d7068f1399d29);
+        
+    
+            poly_line_f6bfc5c262bb032eef9a3699dc4e122b.bindTooltip(
+                `<div>
+                     Manas ➔ Kaziranga
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
